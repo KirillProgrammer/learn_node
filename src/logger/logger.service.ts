@@ -10,6 +10,7 @@ export class LoggerService {
       displayFilePath: 'hidden',
       displayFunctionName: false,
     })
+    this.logger.info('Logger service is started')
   }
 
   log(...args: unknown[]) {
