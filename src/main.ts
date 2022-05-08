@@ -6,9 +6,10 @@ import { ExeptionFilter } from "./errors/exeption.filter"
 import { Container, ContainerModule, interfaces } from "inversify"
 import { TYPES } from "./types"
 import { IExeptionFilter } from "./errors/exeption.filter.interface"
+import { jsLoggerService } from "./logger/otherLogger.service"
 
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
-  bind<ILogger>(TYPES.ILogger).to(LoggerService)
+  bind<ILogger>(TYPES.ILogger).to(jsLoggerService)
   bind<IExeptionFilter>(TYPES.ExeptionFilter).to(ExeptionFilter)
   bind<UserController>(TYPES.UserController).to(UserController)
   bind<App>(TYPES.Application).to(App)
