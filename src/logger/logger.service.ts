@@ -14,6 +14,7 @@ export class LoggerService implements ILogger {
 			displayFilePath: 'hidden',
 			displayFunctionName: false,
 		})
+		this.logger.info('[LoggerService] started')
 	}
 
 	log(...args: unknown[]): void {

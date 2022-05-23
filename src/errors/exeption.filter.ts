@@ -9,7 +9,7 @@ import 'reflect-metadata'
 @injectable()
 export class ExeptionFilter implements IExeptionFilter {
 	constructor(@inject(TYPES.ILogger) private logger: ILogger) {
-		logger.log('ExeptionFilter started')
+		logger.log('[ExeptionFilter] started')
 	}
 
 	catch(err: Error | HTTPError, req: Request, res: Response, next: NextFunction): void {

@@ -27,7 +27,7 @@ export class UserController extends BaseController implements IUserController {
 			},
 			{ path: '/login', method: 'post', func: this.login },
 		])
-		loggerService.log('UserController started')
+		loggerService.log('[UserController] started')
 	}
 
 	login(req: Request<{}, {}, UserLoginDto>, res: Response, next: NextFunction): void {
