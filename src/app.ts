@@ -25,7 +25,8 @@ export class App {
 		@inject(TYPES.PrismaService) private prismaService: PrismaService,
 	) {
 		this.app = express()
-		this.port = 8000
+		this.port = configService.get('PORT') as unknown as number | 8080
+
 		logger.log('App started')
 	}
 
@@ -50,5 +51,8 @@ export class App {
 		this.prismaService.connect()
 		this.server = this.app.listen(this.port)
 		this.logger.log(`Server on http://localhost:${this.port}`)
+	}
+	public close(): void {
+		this.server.close()
 	}
 }
